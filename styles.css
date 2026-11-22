@@ -1,0 +1,539 @@
+/* GROCERYKO - GENERAL STYLING */
+
+:root {
+    /* PRIMARY COLORS (mint) */
+    --mint: #3FB68B;
+    --dark-mint: #2A8F6B;
+    --deep-mint: #1F7556;
+
+    /* ACCENT COLORS */
+    --mint-accent: #A8E0CB;
+    --soft-mint: #EAF8F2;
+    --light-mint: #D3F0E3;
+
+    /* TEXT COLORS (dark green) */
+    --text-primary: #12392B;
+    --text-secondary: #2F5E4C;
+    --text-heading: #0B2E22;
+
+    /* BACKGROUND COLORS */
+    --background: #F3FBF7;
+    --surface: #FFFFFF;
+
+    /* BORDER AND STATUS COLORS */
+    --border: #CFEADF;
+    --danger: #B54455;
+    --success: #1F7556;
+
+    /* EFFECTS */
+    --shadow: 0 18px 50px rgba(42, 143, 107, 0.10);
+}
+
+/* General Settings */
+*{
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: var(--deep-mint);
+}
+
+/* Registration and Login Design */
+.auth-layout {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+    background: radial-gradient(circle at top left, #D7F3E6, transparent 45%),
+    var(--background);
+}
+
+.auth-card, .list-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.auth-card {
+    width: min(100%, 470px);
+    padding: 38px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+/* GroceryKo Logo */
+
+.brand {
+    display: inline-block;
+    color: var(--text-primary);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    text-decoration: none;
+}
+
+.brand span {
+    color: var(--dark-mint);
+}
+
+/* Headings */
+.eyebrow {
+    margin: 25px 0 9px;
+    color: var(--deep-mint);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(28px, 5vw, 36px);
+    letter-spacing: -1px;
+    color: var(--text-heading);
+}
+
+h2 {
+    margin-bottom: 6px;
+    color: var(--text-heading);
+    font-size: 21px;
+}
+
+.muted {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.small-text {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+/* Input Fields  */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.form-field label {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-field input {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 14px;
+    color: var(--text-primary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input::placeholder {
+    color: #5F8576;
+    opacity: 1;
+}
+
+.form-field input:focus {
+    border-color: var(--dark-mint);
+    box-shadow: 0 0 0 3px rgba(63, 182, 139, 0.25);
+}
+
+/* Buttons */
+.primary-button, .secondary-button {
+    min-height: 45px;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 18px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+}
+
+/* Dark green text on mint keeps good contrast */
+.primary-button {
+    color: var(--text-heading);
+    background: var(--mint);
+}
+
+.primary-button:hover {
+    background: var(--dark-mint);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.primary-button:focus-visible {
+    outline: 3px solid var(--mint-accent);
+    outline-offset: 3px;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 23px;
+}
+
+.secondary-button {
+    color: var(--text-heading);
+    background: var(--soft-mint);
+}
+
+.secondary-button:hover {
+    background: var(--light-mint);
+}
+
+.secondary-button:focus-visible {
+    outline: 3px solid var(--dark-mint);
+    outline-offset: 3px;
+}
+
+/* Page links and messages */
+.switch-page {
+    margin: 23px 0 0;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 13px;
+}
+
+.switch-page a {
+    color: var(--deep-mint);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.switch-page a:hover {
+    color: var(--text-heading);
+    text-decoration: underline;
+}
+
+.switch-page a:focus-visible {
+    outline: 2px solid var(--dark-mint);
+    outline-offset: 3px;
+}
+
+.form-message {
+    min-height: 18px;
+    margin: 12px 0 0;
+    font-size: 13px;
+}
+
+.form-message.success {
+    color: var(--success);
+}
+
+.form-message.error {
+    color: var(--danger);
+}
+
+/* GroceryKo List Page - Navigation header */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px max(6vw, 22px);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar .brand {
+    font-size: 25px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.welcome-message {
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+/* Main content */
+.app-container {
+    width: min(900px, calc(100% - 32px));
+    margin: 48px auto;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.page-heading .eyebrow {
+    margin-top: 0;
+}
+
+/* GroceryKo list container */
+.list-card {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+/* Add item form */
+.item-form {
+    display: flex;
+    align-items: end;
+    gap: 14px;
+}
+
+.item-form .form-field {
+    margin-top: 0;
+}
+
+.item-name-field {
+    flex: 1;
+}
+
+.quantity-field {
+    width: 130px;
+}
+
+.add-button {
+    min-width: 125px;
+}
+
+/* list heading */
+.list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--border);
+}
+
+.count-pill {
+    padding: 7px 12px;
+    border-radius: 30px;
+    color: var(--text-heading);
+    background: var(--soft-mint);
+    border: 1px solid var(--mint-accent);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Grocery items */
+.grocery-list {
+    display: grid;
+    gap: 10px;
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.grocery-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grocery-item:hover {
+    border-color: var(--mint-accent);
+    box-shadow: 0 4px 12px rgba(42, 143, 107, 0.08);
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.item-check {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--dark-mint);
+    cursor: pointer;
+}
+
+.item-check:focus-visible {
+    outline: 2px solid var(--dark-mint);
+    outline-offset: 3px;
+}
+
+.item-name {
+    color: var(--text-primary);
+    overflow-wrap: anywhere;
+    font-weight: 700;
+}
+
+.item-quantity {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.grocery-item.completed .item-name {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+/* Edit and delete buttons */
+.item-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.small-action {
+    padding: 7px 10px;
+    border: 1px solid var(--mint-accent);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text-heading);
+    font-size: 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.small-action:hover {
+    background: var(--soft-mint);
+}
+
+.small-action:focus-visible {
+    outline: 2px solid var(--dark-mint);
+    outline-offset: 3px;
+}
+
+.small-action.delete {
+    color: var(--danger);
+    border-color: #E3B5BC;
+}
+
+.small-action.delete:hover {
+    color: #FFFFFF;
+    background: var(--danger);
+}
+
+/* empty list message */
+.empty-message {
+    padding: 25px 10px;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* clear list */
+.list-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.text-button {
+    padding: 7px 0;
+    border: 0;
+    color: var(--danger);
+    background: transparent;
+    font-weight: 700;
+}
+
+.text-button:hover {
+    text-decoration: underline;
+}
+
+.text-button:focus-visible {
+    outline: 2px solid var(--dark-mint);
+    outline-offset: 3px;
+}
+
+/* footer */
+.footer-note {
+    margin-top: 24px;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Keyboard accessibility */
+button:focus-visible, a:focus-visible, input:focus-visible {
+    outline-color: var(--dark-mint);
+}
+
+/* Responsive design*/
+@media (max-width: 620px) {
+    .auth-card {
+        padding: 28px 22px;
+    }
+    .topbar {
+        padding: 15px 18px;
+    }
+    .welcome-message {
+        display: none;
+    }
+    .app-container {
+        margin: 30px auto;
+    }
+    .list-card {
+        padding: 20px 16px;
+    }
+    .item-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .quantity-field {
+        width: 100%;
+    }
+    .add-button {
+        width: 100%;
+    }
+    .grocery-item {
+        align-items: flex-start;
+    }
+    .item-actions {
+        flex-direction: column;
+    }
+}
+
+/* reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
